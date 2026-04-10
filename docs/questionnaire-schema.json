@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "title": "Fragrance Preference Quiz",
+  "questions": [
+    {
+      "id": "gender_direction",
+      "type": "single_select",
+      "required": true,
+      "title": "What fragrance direction do you want?",
+      "options": [
+        { "value": "masculine", "label": "Masculine leaning" },
+        { "value": "feminine", "label": "Feminine leaning" },
+        { "value": "unisex", "label": "Unisex" },
+        { "value": "no-preference", "label": "No preference" }
+      ]
+    },
+    {
+      "id": "age_range",
+      "type": "single_select",
+      "required": true,
+      "title": "Which age range best fits you or the person you're shopping for?",
+      "options": [
+        { "value": "under-18", "label": "Under 18" },
+        { "value": "18-24", "label": "18 to 24" },
+        { "value": "25-34", "label": "25 to 34" },
+        { "value": "35-44", "label": "35 to 44" },
+        { "value": "45-54", "label": "45 to 54" },
+        { "value": "55-plus", "label": "55+" },
+        { "value": "prefer-not-to-say", "label": "Prefer not to say" }
+      ]
+    },
+    {
+      "id": "usage",
+      "type": "single_select",
+      "required": true,
+      "title": "What are you looking for this fragrance for?",
+      "options": [
+        { "value": "everyday", "label": "Everyday wear" },
+        { "value": "office", "label": "Office or professional" },
+        { "value": "date-night", "label": "Date night" },
+        { "value": "special-occasion", "label": "Special occasions" },
+        { "value": "gift", "label": "Gifting" },
+        { "value": "signature", "label": "Signature scent" }
+      ]
+    },
+    {
+      "id": "longevity",
+      "type": "single_select",
+      "required": true,
+      "title": "How long do you want it to last?",
+      "options": [
+        { "value": "light", "label": "Light wear, 3 to 5 hours" },
+        { "value": "balanced", "label": "Balanced, 5 to 8 hours" },
+        { "value": "long", "label": "Long-lasting, 8+ hours" }
+      ]
+    },
+    {
+      "id": "style_preferences",
+      "type": "multi_select",
+      "required": true,
+      "maxSelections": 3,
+      "title": "Which scent styles do you enjoy most?",
+      "options": [
+        { "value": "woody", "label": "Woody" },
+        { "value": "fresh", "label": "Fresh" },
+        { "value": "floral", "label": "Floral" },
+        { "value": "amber", "label": "Amber" },
+        { "value": "musky", "label": "Musky" },
+        { "value": "sweet", "label": "Sweet" },
+        { "value": "citrus", "label": "Citrus" },
+        { "value": "spicy", "label": "Spicy" },
+        { "value": "powdery", "label": "Powdery" },
+        { "value": "french-luxury", "label": "French luxury style" }
+      ]
+    },
+    {
+      "id": "projection",
+      "type": "single_select",
+      "required": true,
+      "title": "How noticeable should it be around you?",
+      "options": [
+        { "value": "soft", "label": "Soft and close to skin" },
+        { "value": "moderate", "label": "Moderate and balanced" },
+        { "value": "strong", "label": "Strong and attention-grabbing" }
+      ]
+    },
+    {
+      "id": "budget",
+      "type": "single_select",
+      "required": true,
+      "title": "What budget range are you considering?",
+      "options": [
+        { "value": "under-100", "label": "Under $100" },
+        { "value": "100-200", "label": "$100 to $200" },
+        { "value": "200-plus", "label": "$200+" },
+        { "value": "open", "label": "Open to all" }
+      ]
+    },
+    {
+      "id": "climate",
+      "type": "single_select",
+      "required": true,
+      "title": "Where do you expect to wear it most?",
+      "options": [
+        { "value": "hot", "label": "Hot weather" },
+        { "value": "cool", "label": "Cool weather" },
+        { "value": "all-year", "label": "All year" }
+      ]
+    },
+    {
+      "id": "brand_scope",
+      "type": "single_select",
+      "required": false,
+      "title": "Would you like only major international brands, or are you open to discovering more?",
+      "options": [
+        { "value": "major-only", "label": "Only major brands" },
+        { "value": "major-first", "label": "Major brands first, but open to more" },
+        { "value": "open", "label": "Open to all" }
+      ]
+    },
+    {
+      "id": "gift_target",
+      "type": "single_select",
+      "required": false,
+      "showWhen": {
+        "questionId": "usage",
+        "operator": "equals",
+        "value": "gift"
+      },
+      "title": "Who is the gift for?",
+      "options": [
+        { "value": "man", "label": "Man" },
+        { "value": "woman", "label": "Woman" },
+        { "value": "unisex", "label": "Unisex" },
+        { "value": "unsure", "label": "Not sure" }
+      ]
+    },
+    {
+      "id": "avoidances",
+      "type": "multi_select",
+      "required": false,
+      "title": "Any styles you want to avoid?",
+      "options": [
+        { "value": "too-sweet", "label": "Too sweet" },
+        { "value": "too-floral", "label": "Too floral" },
+        { "value": "too-strong", "label": "Too strong" },
+        { "value": "too-fresh", "label": "Too fresh" },
+        { "value": "none", "label": "No specific dislikes" }
+      ]
+    }
+  ]
+}

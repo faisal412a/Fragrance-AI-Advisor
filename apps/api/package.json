@@ -1,0 +1,9 @@
+{
+  "name": "@fragrance-ai/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node src/server.js",
+    "lint": "echo \"API lint not configured yet\""
+  }
+}

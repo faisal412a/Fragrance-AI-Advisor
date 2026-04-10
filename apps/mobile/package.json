@@ -1,0 +1,14 @@
+{
+  "name": "@fragrance-ai/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "expo start",
+    "lint": "echo \"Mobile lint not configured yet\""
+  },
+  "dependencies": {
+    "expo": "~52.0.0",
+    "react": "18.3.1",
+    "react-native": "0.76.1"
+  }
+}
