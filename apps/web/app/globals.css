@@ -1,15 +1,14 @@
 :root {
-  --bg: #f7efe4;
-  --bg-deep: #d7c0aa;
-  --panel: rgba(255, 248, 239, 0.76);
-  --panel-strong: rgba(255, 250, 246, 0.9);
-  --text: #28170c;
-  --muted: #6a4e40;
-  --accent: #9f5627;
-  --accent-strong: #6f3110;
-  --gold: #bd8a4a;
-  --line: rgba(64, 33, 16, 0.1);
-  --shadow: 0 25px 80px rgba(58, 28, 10, 0.12);
+  --bg: #060606;
+  --bg-soft: #101010;
+  --panel: rgba(255, 255, 255, 0.08);
+  --panel-strong: rgba(255, 255, 255, 0.12);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #f4efe8;
+  --muted: rgba(244, 239, 232, 0.72);
+  --gold: #d7b37a;
+  --gold-strong: #a97834;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -22,9 +21,8 @@ body {
   padding: 0;
   min-height: 100%;
   background:
-    radial-gradient(circle at top, rgba(255, 252, 249, 0.8), transparent 28%),
-    radial-gradient(circle at 85% 10%, rgba(215, 192, 170, 0.45), transparent 24%),
-    linear-gradient(180deg, var(--bg) 0%, #efdfcf 100%);
+    radial-gradient(circle at top, rgba(255, 220, 166, 0.08), transparent 22%),
+    linear-gradient(180deg, #040404 0%, #0a0a0a 100%);
   color: var(--text);
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   scroll-behavior: smooth;
@@ -34,755 +32,676 @@ body {
   min-height: 100vh;
 }
 
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
 .page-shell {
-  max-width: 1240px;
+  max-width: 1480px;
   margin: 0 auto;
-  padding: 40px 20px 88px;
+  padding: 28px 20px 80px;
 }
 
-.hero {
-  padding: 24px 0 56px;
+.dark-shell {
+  color: var(--text);
 }
 
-.eyebrow {
+.intro-panel {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 20px;
+  align-items: end;
+  padding: 10px 0 28px;
+}
+
+.eyebrow,
+.ritual-overline {
   margin: 0 0 12px;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  font-size: 0.78rem;
-  color: var(--accent-strong);
+  font-size: 0.76rem;
+  color: var(--gold);
 }
 
-.hero h1 {
+.intro-panel h1 {
   margin: 0;
-  max-width: 760px;
-  font-size: clamp(3rem, 7vw, 6rem);
+  max-width: 860px;
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
   line-height: 0.92;
 }
 
-.lede {
-  max-width: 760px;
-  margin-top: 20px;
-  font-size: 1.08rem;
-  line-height: 1.75;
+.lede,
+.ritual-body {
+  max-width: 720px;
+  margin-top: 18px;
   color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.7;
 }
 
-.hero-grid,
-.overview-grid,
-.experience-shell {
+.intro-stats {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 12px;
 }
 
-.hero-copy {
-  padding-top: 26px;
-}
-
-.hero-actions,
-.hero-metrics,
-.tag-row,
-.quiz-footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.hero-actions {
-  margin-top: 28px;
-}
-
-.hero-metrics {
-  margin-top: 28px;
-}
-
-.hero-metrics div,
-.visual-card,
-.info-card,
-.quiz-panel,
-.results-panel {
-  background: var(--panel);
+.intro-stats div,
+.question-card,
+.progress-stop,
+.formula-card {
   border: 1px solid var(--line);
-  border-radius: 30px;
-  backdrop-filter: blur(12px);
+  background: var(--panel);
   box-shadow: var(--shadow);
 }
 
-.hero-metrics div {
-  min-width: 150px;
-  padding: 16px 18px;
+.intro-stats div {
+  border-radius: 24px;
+  padding: 18px 20px;
 }
 
-.hero-metrics strong {
+.intro-stats strong {
   display: block;
   font-size: 1.8rem;
 }
 
-.hero-metrics span {
+.intro-stats span {
   color: var(--muted);
+}
+
+.ritual-shell {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 18px;
+  align-items: start;
+}
+
+.ritual-scene {
+  position: relative;
+  min-height: 84vh;
+  overflow: hidden;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.ritual-scene::before,
+.ritual-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ritual-scene::before {
+  background: linear-gradient(90deg, rgba(6, 6, 6, 0.72) 0%, rgba(6, 6, 6, 0.32) 45%, rgba(6, 6, 6, 0.55) 100%);
+}
+
+.ritual-scene::after {
+  opacity: 0.95;
+}
+
+.theme-noir {
+  background: linear-gradient(135deg, #080808, #131313);
+}
+
+.theme-smoke {
+  background: linear-gradient(135deg, #090909, #171514);
+}
+
+.theme-night {
+  background: linear-gradient(135deg, #07090c, #16181c);
+}
+
+.theme-graphite {
+  background: linear-gradient(135deg, #090909, #1c1c1c);
+}
+
+.theme-obsidian {
+  background: linear-gradient(135deg, #050505, #111214);
+}
+
+.theme-emerald {
+  background: linear-gradient(135deg, #050706, #111613);
+}
+
+.theme-gold {
+  background: linear-gradient(135deg, #090807, #1c160d);
+}
+
+.theme-frost {
+  background: linear-gradient(135deg, #060709, #15191f);
+}
+
+.scene-silhouette::after {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(231, 179, 118, 0.18), transparent 18%),
+    radial-gradient(circle at 72% 30%, rgba(255, 255, 255, 0.08), transparent 20%),
+    linear-gradient(180deg, transparent 0 50%, rgba(255, 255, 255, 0.04) 50% 100%);
+}
+
+.scene-silhouette .ritual-stage::after {
+  content: "";
+  position: absolute;
+  right: 7%;
+  bottom: 0;
+  width: 280px;
+  height: 540px;
+  border-radius: 140px 140px 18px 18px;
+  background:
+    radial-gradient(circle at 52% 14%, rgba(240, 194, 150, 0.96) 0 10%, transparent 11%),
+    linear-gradient(180deg, transparent 0 16%, #101010 16% 26%, #3b1d0f 26% 58%, #d2b79b 58% 100%);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.08);
+}
+
+.scene-atelier::after {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent 24%),
+    radial-gradient(circle at 76% 40%, rgba(248, 227, 190, 0.18), transparent 18%);
+}
+
+.scene-atelier .ritual-stage::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  bottom: 12%;
+  width: 220px;
+  height: 320px;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(177, 138, 92, 0.26)),
+    rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.scene-marble::after {
+  background:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 40%),
+    radial-gradient(circle at 76% 72%, rgba(214, 175, 118, 0.18), transparent 20%);
+}
+
+.scene-marble .ritual-stage::after {
+  content: "";
+  position: absolute;
+  right: 9%;
+  bottom: 10%;
+  width: 240px;
+  height: 330px;
+  border-radius: 36px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(121, 121, 121, 0.18)),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.scene-bottle::after,
+.scene-glass::after {
+  background:
+    radial-gradient(circle at 72% 28%, rgba(255, 255, 255, 0.1), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 26%);
+}
+
+.scene-bottle .ritual-stage::after,
+.scene-glass .ritual-stage::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  bottom: 6%;
+  width: 210px;
+  height: 420px;
+  border-radius: 28px 28px 18px 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(183, 149, 99, 0.18)),
+    rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.scene-botanicals::after,
+.scene-petals::after {
+  background:
+    radial-gradient(circle at 18% 82%, rgba(94, 125, 82, 0.35), transparent 14%),
+    radial-gradient(circle at 72% 20%, rgba(177, 120, 118, 0.18), transparent 14%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%);
+}
+
+.scene-botanicals .ritual-stage::after,
+.scene-petals .ritual-stage::after {
+  content: "";
+  position: absolute;
+  right: 6%;
+  bottom: 10%;
+  width: 320px;
+  height: 220px;
+  border-radius: 40px 120px 40px 120px;
+  background:
+    radial-gradient(circle at 18% 40%, rgba(109, 136, 92, 0.9), transparent 26%),
+    radial-gradient(circle at 62% 58%, rgba(210, 145, 92, 0.9), transparent 22%),
+    radial-gradient(circle at 82% 32%, rgba(199, 144, 149, 0.9), transparent 16%);
+}
+
+.scene-gilded::after {
+  background:
+    radial-gradient(circle at 70% 32%, rgba(215, 179, 122, 0.24), transparent 16%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%);
+}
+
+.scene-gilded .ritual-stage::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  bottom: 8%;
+  width: 260px;
+  height: 360px;
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(215, 179, 122, 0.22)),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(215, 179, 122, 0.26);
+}
+
+.scene-silk::after {
+  background:
+    radial-gradient(circle at 76% 24%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+}
+
+.scene-silk .ritual-stage::after {
+  content: "";
+  position: absolute;
+  right: 4%;
+  bottom: 12%;
+  width: 400px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02));
+  filter: blur(10px);
+}
+
+.scene-shelves::after,
+.scene-ribbon::after {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent 24%),
+    radial-gradient(circle at 75% 30%, rgba(255, 255, 255, 0.1), transparent 16%);
+}
+
+.scene-shelves .ritual-stage::after,
+.scene-ribbon .ritual-stage::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+  width: 340px;
+  height: 220px;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04)),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ritual-nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 0;
+}
+
+.brand-mark {
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.ritual-links {
+  display: flex;
+  gap: 24px;
+}
+
+.ritual-links a {
+  text-decoration: none;
+  color: rgba(244, 239, 232, 0.62);
+  font-family: Arial, sans-serif;
   font-size: 0.92rem;
 }
 
-.hero-visual {
+.ritual-stage,
+.results-stage {
   position: relative;
-  min-height: 540px;
-}
-
-.visual-card {
-  position: absolute;
-  padding: 22px;
-}
-
-.hero-gallery {
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 14px;
-  margin-bottom: 18px;
+  grid-template-columns: 1fr 480px;
+  gap: 34px;
+  min-height: calc(84vh - 86px);
+  padding: 56px 28px 30px;
 }
 
-.gallery-frame {
+.ritual-copy {
+  align-self: center;
+  max-width: 660px;
+  padding-left: 8px;
+}
+
+.ritual-copy h2,
+.results-hero h2 {
+  margin: 0;
+  max-width: 640px;
+  font-size: clamp(2.9rem, 7vw, 5.2rem);
+  line-height: 0.92;
+}
+
+.question-card,
+.formula-card {
   position: relative;
-  overflow: hidden;
-  min-height: 148px;
-  border-radius: 24px;
-  border: 1px solid rgba(89, 47, 21, 0.08);
+  backdrop-filter: blur(18px);
 }
 
-.gallery-model {
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255, 241, 221, 0.8), transparent 28%),
-    linear-gradient(145deg, rgba(89, 40, 16, 0.95), rgba(156, 92, 46, 0.92));
+.question-card {
+  align-self: center;
+  padding: 26px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.gallery-orb {
-  position: absolute;
-  inset: 20px auto auto 20px;
-  width: 90px;
-  height: 90px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 219, 179, 0.95), rgba(255, 219, 179, 0));
-  filter: blur(6px);
-}
-
-.gallery-figure {
-  position: absolute;
-  right: 34px;
-  bottom: 0;
-  width: 140px;
-  height: 170px;
-  border-radius: 80px 80px 12px 12px;
-  background:
-    radial-gradient(circle at 55% 24%, #f1c39d 0 16%, transparent 17%),
-    linear-gradient(180deg, transparent 0 22%, #1d0d06 22% 36%, #59270f 36% 60%, #f2e4d3 60% 100%);
-  box-shadow: inset 0 -18px 30px rgba(255, 255, 255, 0.15);
-}
-
-.gallery-bottle {
-  background:
-    linear-gradient(180deg, rgba(248, 233, 217, 0.95), rgba(231, 207, 181, 0.92)),
-    #f7ecdf;
-}
-
-.bottle-cap,
-.bottle-glass {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.bottle-cap {
-  top: 22px;
-  width: 54px;
-  height: 24px;
-  border-radius: 10px 10px 6px 6px;
-  background: linear-gradient(180deg, #4f2914, #241108);
-}
-
-.bottle-glass {
-  top: 44px;
-  width: 112px;
-  height: 110px;
-  border-radius: 24px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(244, 205, 144, 0.76)),
-    rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(137, 86, 40, 0.18);
-  box-shadow:
-    inset 0 0 20px rgba(255, 255, 255, 0.55),
-    0 18px 30px rgba(111, 49, 16, 0.12);
-}
-
-.bottle-label {
-  position: absolute;
-  left: 50%;
-  bottom: 22px;
-  transform: translateX(-50%);
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
-}
-
-.gallery-botanicals {
-  grid-column: 1 / -1;
-  min-height: 92px;
+.question-meta,
+.question-actions,
+.formula-tags,
+.results-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  padding: 18px;
-  background:
-    linear-gradient(180deg, rgba(255, 250, 245, 0.95), rgba(243, 231, 217, 0.9)),
-    #fff;
+  gap: 12px;
 }
 
-.botanical-tag,
-.ingredient-ribbon span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 0 14px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(89, 47, 21, 0.08);
-}
-
-.visual-card-main {
-  inset: 18px 72px 88px 0;
-  background:
-    linear-gradient(160deg, rgba(255, 251, 246, 0.88), rgba(233, 216, 196, 0.82)),
-    var(--panel);
-}
-
-.visual-card-float {
-  right: 0;
-  bottom: 18px;
-  width: 290px;
-  background:
-    linear-gradient(180deg, rgba(140, 74, 34, 0.92), rgba(88, 42, 16, 0.96)),
-    var(--accent-strong);
-  color: #fff8f1;
-}
-
-.visual-card-float p,
-.visual-card-float .visual-label {
-  color: rgba(255, 248, 241, 0.78);
-}
-
-.visual-label,
-.section-kicker {
-  margin: 0 0 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.74rem;
-  color: var(--accent-strong);
-}
-
-.visual-row {
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: 14px;
-  align-items: start;
-  padding: 18px 0;
-  border-top: 1px solid rgba(64, 33, 16, 0.08);
-}
-
-.visual-row:first-of-type {
-  border-top: 0;
-}
-
-.visual-row span {
-  font-size: 1.4rem;
-  color: var(--gold);
-}
-
-.visual-row p,
-.visual-card-float h3,
-.info-card h2,
-.quiz-header h2,
-.results-intro h3,
-.result-copy h4 {
-  margin: 0;
-}
-
-.overview-grid {
-  margin-top: 10px;
-  margin-bottom: 32px;
-}
-
-.info-card,
-.quiz-panel,
-.results-panel {
-  padding: 28px;
-}
-
-.info-card-accent {
-  background:
-    linear-gradient(145deg, rgba(255, 247, 238, 0.9), rgba(234, 219, 199, 0.92)),
-    var(--panel);
-}
-
-.feature-list {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.feature-list li + li {
-  margin-top: 12px;
-}
-
-.ingredient-ribbon {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.experience-shell {
-  align-items: start;
-  margin-top: 18px;
-}
-
-.quiz-panel {
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.38), transparent 30%),
-    var(--panel-strong);
-}
-
-.quiz-header,
-.result-card {
-  display: flex;
+.question-meta {
   justify-content: space-between;
-  gap: 18px;
-}
-
-.quiz-header {
-  align-items: end;
-}
-
-.progress-wrap {
-  min-width: 130px;
-  text-align: right;
-}
-
-.progress-wrap span {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
   color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
 }
 
-.progress-track {
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(110, 66, 38, 0.12);
-  overflow: hidden;
+.question-card h3 {
+  margin: 16px 0 10px;
+  font-size: 1.85rem;
 }
 
-.progress-fill {
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--gold), var(--accent));
-  transition: width 220ms ease;
+.question-hint,
+.auto-note,
+.formula-reason {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
-.option-grid {
+.choice-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 24px;
+  gap: 12px;
+  margin-top: 22px;
 }
 
-.option-card,
-.answer-pill,
-.primary-button,
-.secondary-button,
-.ghost-button {
-  border: 0;
-  text-decoration: none;
-  cursor: pointer;
+.choice-grid-compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.option-card {
-  padding: 18px;
+.choice-chip {
+  min-height: 64px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
   text-align: left;
-  border-radius: 24px;
-  background: rgba(255, 251, 246, 0.95);
-  border: 1px solid rgba(89, 47, 21, 0.08);
+  cursor: pointer;
   transition:
     transform 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease;
+    border-color 180ms ease,
+    background-color 180ms ease;
 }
 
-.option-card:hover,
-.answer-pill:hover {
+.choice-chip:hover {
   transform: translateY(-1px);
 }
 
-.option-card span,
-.answer-pill strong {
-  display: block;
+.choice-chip-selected {
+  border-color: rgba(215, 179, 122, 0.55);
+  background: rgba(215, 179, 122, 0.18);
 }
 
-.option-card small,
-.answer-pill span,
-.result-reason,
-.info-card p,
-.visual-card p {
-  color: var(--muted);
-}
-
-.option-card-selected {
-  background: linear-gradient(180deg, rgba(250, 230, 205, 0.95), rgba(255, 246, 236, 0.98));
-  border-color: rgba(159, 86, 39, 0.4);
+.question-actions {
+  margin-top: 22px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .primary-button,
-.secondary-button,
 .ghost-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 20px;
+  min-height: 52px;
+  padding: 0 22px;
   border-radius: 999px;
-  font-weight: 600;
+  border: 0;
+  cursor: pointer;
   transition:
     transform 180ms ease,
     opacity 180ms ease;
 }
 
-.primary-button {
-  color: #fff9f2;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  box-shadow: 0 10px 30px rgba(111, 49, 16, 0.22);
-}
-
-.secondary-button,
-.ghost-button {
-  color: var(--text);
-  background: rgba(255, 249, 243, 0.8);
-  border: 1px solid rgba(89, 47, 21, 0.1);
-}
-
 .primary-button:hover,
-.secondary-button:hover,
 .ghost-button:hover {
   transform: translateY(-1px);
 }
 
-.primary-button:disabled,
+.dark-button {
+  color: #17110b;
+  background: linear-gradient(135deg, #f2d9b3, #c59653);
+  box-shadow: 0 10px 26px rgba(201, 151, 76, 0.25);
+}
+
+.dark-ghost {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 .ghost-button:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
   transform: none;
 }
 
-.answer-strip {
+.ritual-progress {
+  display: grid;
+  gap: 10px;
+  position: sticky;
+  top: 24px;
+}
+
+.progress-stop {
+  padding: 14px;
+  border-radius: 20px;
+  text-align: left;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.progress-stop strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.progress-stop span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.progress-stop-active {
+  border-color: rgba(215, 179, 122, 0.4);
+  background: rgba(215, 179, 122, 0.16);
+}
+
+.ritual-results .ritual-scene {
+  background: linear-gradient(135deg, #050505, #0e0d0b);
+}
+
+.results-stage {
+  grid-template-columns: 1fr;
+  align-content: start;
+}
+
+.results-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.answer-pill {
-  padding: 14px 16px;
-  border-radius: 20px;
-  background: rgba(255, 250, 246, 0.7);
-  border: 1px solid rgba(89, 47, 21, 0.08);
-  text-align: left;
-}
-
-.answer-pill-active {
-  background: linear-gradient(180deg, rgba(255, 243, 229, 0.98), rgba(249, 233, 212, 0.95));
-}
-
-.results-panel {
-  background:
-    linear-gradient(180deg, rgba(68, 33, 14, 0.98), rgba(34, 15, 7, 0.98)),
-    #2d160c;
-  color: #fff5ec;
-  position: sticky;
-  top: 20px;
-}
-
-.editorial-shot {
-  position: relative;
-  min-height: 270px;
-  overflow: hidden;
-  border-radius: 26px;
-  background:
-    radial-gradient(circle at 24% 18%, rgba(255, 223, 183, 0.18), transparent 18%),
-    linear-gradient(135deg, rgba(100, 49, 21, 0.95), rgba(36, 16, 8, 0.98));
-  border: 1px solid rgba(255, 236, 220, 0.08);
-}
-
-.editorial-portrait {
-  position: absolute;
-  inset: 0;
-}
-
-.portrait-glow {
-  position: absolute;
-  left: 24px;
-  top: 20px;
-  width: 120px;
-  height: 120px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 217, 174, 0.85), rgba(255, 217, 174, 0));
-  filter: blur(10px);
-}
-
-.portrait-silhouette {
-  position: absolute;
-  right: 54px;
-  bottom: 0;
-  width: 185px;
-  height: 250px;
-  border-radius: 100px 100px 18px 18px;
-  background:
-    radial-gradient(circle at 55% 20%, #f1c5a4 0 13%, transparent 14%),
-    linear-gradient(180deg, transparent 0 18%, #1d0d06 18% 33%, #5a2a13 33% 63%, #d7c0aa 63% 100%);
-}
-
-.portrait-bottle {
-  position: absolute;
-  left: 44px;
-  bottom: 28px;
-  width: 90px;
-  height: 122px;
-  border-radius: 24px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(224, 174, 90, 0.55)),
-    rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 237, 220, 0.18);
-  box-shadow:
-    inset 0 0 18px rgba(255, 255, 255, 0.35),
-    0 20px 35px rgba(0, 0, 0, 0.18);
-}
-
-.portrait-bottle::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 18px;
-  border-radius: 8px 8px 4px 4px;
-  background: linear-gradient(180deg, #f5cf97, #8b4a22);
-}
-
-.botanical-cluster {
-  position: absolute;
-  right: 20px;
-  top: 18px;
-  display: grid;
-  gap: 8px;
-}
-
-.botanical {
-  display: block;
-}
-
-.botanical-leaf {
-  width: 44px;
-  height: 80px;
-  border-radius: 100% 0 100% 0;
-  background: linear-gradient(180deg, rgba(127, 147, 102, 0.9), rgba(69, 95, 58, 0.9));
-  transform: rotate(28deg);
-}
-
-.botanical-petal {
-  width: 58px;
-  height: 58px;
-  border-radius: 100% 20% 100% 20%;
-  background: linear-gradient(180deg, rgba(240, 195, 188, 0.92), rgba(185, 106, 103, 0.92));
-  transform: rotate(-18deg);
-}
-
-.botanical-citrus {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle, rgba(255, 198, 112, 0.98) 0 56%, rgba(228, 133, 44, 0.98) 57% 100%);
-}
-
-.results-intro .section-kicker,
-.result-brand {
-  color: rgba(255, 240, 228, 0.76);
-}
-
-.results-intro h3 {
-  font-size: 1.35rem;
-  line-height: 1.45;
-}
-
-.recommendation-stack {
-  margin-top: 22px;
-  display: grid;
-  gap: 14px;
-}
-
-.final-results {
-  margin-top: 24px;
-}
-
-.results-intro-light .section-kicker,
-.result-brand-light {
-  color: var(--accent-strong);
-}
-
-.recommendation-stack-light {
   gap: 16px;
+  margin-top: 26px;
 }
 
-.result-card {
-  align-items: flex-start;
-  padding: 18px;
-  border-radius: 24px;
-  background: rgba(255, 250, 246, 0.08);
-  border: 1px solid rgba(255, 236, 220, 0.08);
+.formula-card {
+  padding: 22px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.result-rank {
-  min-width: 48px;
-  font-size: 1.15rem;
+.formula-rank,
+.formula-brand {
   color: var(--gold);
 }
 
-.result-brand {
-  margin: 0 0 4px;
-  font-size: 0.82rem;
+.formula-rank {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.formula-brand {
+  margin: 0 0 6px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-family: Arial, sans-serif;
 }
 
-.result-copy h4 {
-  font-size: 1.3rem;
+.formula-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.45rem;
 }
 
-.result-reason {
-  margin: 10px 0 14px;
-  color: rgba(255, 240, 228, 0.82);
-  line-height: 1.65;
+.formula-tags {
+  margin-top: 16px;
 }
 
-.result-card-light {
-  background: rgba(255, 249, 242, 0.88);
-  border: 1px solid rgba(89, 47, 21, 0.08);
-}
-
-.result-reason-light {
-  color: var(--muted);
-}
-
-.tag {
+.formula-tag {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
+  min-height: 34px;
   padding: 0 12px;
   border-radius: 999px;
-  font-size: 0.9rem;
-  background: rgba(255, 247, 240, 0.12);
-  border: 1px solid rgba(255, 236, 220, 0.12);
-}
-
-.tag-light {
-  background: rgba(255, 246, 236, 0.92);
-  border-color: rgba(89, 47, 21, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--text);
+  font-size: 0.9rem;
 }
 
-.knowledge-stack {
-  margin-top: 20px;
-  display: grid;
-  gap: 12px;
-}
+@media (max-width: 1180px) {
+  .ritual-shell {
+    grid-template-columns: 1fr;
+  }
 
-.knowledge-card {
-  padding: 16px 18px;
-  border-radius: 20px;
-  background: rgba(255, 250, 246, 0.08);
-  border: 1px solid rgba(255, 236, 220, 0.08);
-}
-
-.knowledge-title {
-  margin: 0 0 6px;
-  color: #fff4ea;
-  font-size: 0.88rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.knowledge-card p:last-child {
-  margin: 0;
-  color: rgba(255, 240, 228, 0.78);
-  line-height: 1.6;
+  .ritual-progress {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 1024px) {
-  .hero-grid,
-  .overview-grid,
-  .experience-shell {
+  .intro-panel,
+  .ritual-stage {
     grid-template-columns: 1fr;
   }
 
-  .hero-visual {
-    min-height: 420px;
+  .ritual-scene {
+    min-height: auto;
   }
 
-  .results-panel {
-    position: static;
+  .ritual-stage,
+  .results-stage {
+    min-height: auto;
   }
 
-  .hero-gallery {
-    grid-template-columns: 1fr;
+  .ritual-copy {
+    padding-right: 120px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .page-shell {
-    padding: 28px 16px 56px;
+    padding: 18px 12px 56px;
   }
 
-  .hero h1 {
-    font-size: 2.8rem;
+  .intro-panel {
+    gap: 14px;
+    padding-bottom: 18px;
   }
 
-  .visual-card,
-  .info-card,
-  .quiz-panel,
-  .results-panel {
-    border-radius: 22px;
+  .ritual-nav {
+    padding: 18px 18px 0;
   }
 
-  .visual-card {
-    position: static;
-    width: auto;
-    margin-bottom: 16px;
+  .ritual-links {
+    gap: 12px;
+    font-size: 0.84rem;
   }
 
-  .hero-visual {
-    min-height: 0;
+  .ritual-stage,
+  .results-stage {
+    padding: 30px 18px 18px;
   }
 
-  .option-grid,
-  .answer-strip {
+  .ritual-copy {
+    padding-right: 0;
+  }
+
+  .question-card,
+  .formula-card {
+    border-radius: 24px;
+  }
+
+  .choice-grid,
+  .choice-grid-compact,
+  .results-grid,
+  .ritual-progress {
     grid-template-columns: 1fr;
   }
 
-  .quiz-header,
-  .result-card {
-    display: block;
+  .ritual-scene::before {
+    background: linear-gradient(180deg, rgba(6, 6, 6, 0.78) 0%, rgba(6, 6, 6, 0.5) 40%, rgba(6, 6, 6, 0.78) 100%);
   }
 
-  .progress-wrap {
-    min-width: 0;
-    margin-top: 18px;
-    text-align: left;
+  .scene-silhouette .ritual-stage::after,
+  .scene-atelier .ritual-stage::after,
+  .scene-marble .ritual-stage::after,
+  .scene-bottle .ritual-stage::after,
+  .scene-glass .ritual-stage::after,
+  .scene-botanicals .ritual-stage::after,
+  .scene-petals .ritual-stage::after,
+  .scene-gilded .ritual-stage::after,
+  .scene-silk .ritual-stage::after,
+  .scene-shelves .ritual-stage::after,
+  .scene-ribbon .ritual-stage::after {
+    width: 150px;
+    height: 220px;
+    right: 4%;
+    bottom: auto;
+    top: 96px;
+    opacity: 0.42;
+  }
+
+  .ritual-links {
+    display: none;
   }
 }
