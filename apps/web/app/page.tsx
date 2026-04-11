@@ -4,6 +4,7 @@ import { QuizExperience } from "./components/quiz-experience";
 export default function HomePage() {
   const requiredCount = questionnaire.questions.filter((question) => question.required).length;
   const openingQuestions = questionnaire.questions.slice(0, 4);
+  const visualNotes = ["Bergamot", "Rose", "Cedar", "Iris", "Amber"];
 
   return (
     <main className="page-shell">
@@ -41,6 +42,24 @@ export default function HomePage() {
 
         <div className="hero-visual">
           <div className="visual-card visual-card-main">
+            <div className="hero-gallery">
+              <div className="gallery-frame gallery-model">
+                <div className="gallery-orb" />
+                <div className="gallery-figure" />
+              </div>
+              <div className="gallery-frame gallery-bottle">
+                <div className="bottle-cap" />
+                <div className="bottle-glass" />
+                <div className="bottle-label">Atelier Intelligence</div>
+              </div>
+              <div className="gallery-frame gallery-botanicals">
+                {visualNotes.map((note) => (
+                  <span key={note} className="botanical-tag">
+                    {note}
+                  </span>
+                ))}
+              </div>
+            </div>
             <p className="visual-label">Opening sequence</p>
             {openingQuestions.map((question, index) => (
               <div className="visual-row" key={question.id}>
@@ -76,6 +95,11 @@ export default function HomePage() {
             <li>Short guided quiz with a clear sense of progress.</li>
             <li>Transparent recommendations with notes, style fit, and brand context.</li>
           </ul>
+          <div className="ingredient-ribbon">
+            <span>Citrus opening</span>
+            <span>Floral heart</span>
+            <span>Woody base</span>
+          </div>
         </article>
       </section>
 
