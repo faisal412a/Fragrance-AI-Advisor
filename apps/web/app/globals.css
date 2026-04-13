@@ -182,38 +182,10 @@ button {
     linear-gradient(180deg, transparent 0 50%, rgba(255, 255, 255, 0.04) 50% 100%);
 }
 
-.scene-silhouette .ritual-stage::after {
-  content: "";
-  position: absolute;
-  right: 7%;
-  bottom: 0;
-  width: 280px;
-  height: 540px;
-  border-radius: 140px 140px 18px 18px;
-  background:
-    radial-gradient(circle at 52% 14%, rgba(240, 194, 150, 0.96) 0 10%, transparent 11%),
-    linear-gradient(180deg, transparent 0 16%, #101010 16% 26%, #3b1d0f 26% 58%, #d2b79b 58% 100%);
-  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.08);
-}
-
 .scene-atelier::after {
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent 24%),
     radial-gradient(circle at 76% 40%, rgba(248, 227, 190, 0.18), transparent 18%);
-}
-
-.scene-atelier .ritual-stage::after {
-  content: "";
-  position: absolute;
-  right: 10%;
-  bottom: 12%;
-  width: 220px;
-  height: 320px;
-  border-radius: 30px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(177, 138, 92, 0.26)),
-    rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .scene-marble::after {
@@ -222,40 +194,11 @@ button {
     radial-gradient(circle at 76% 72%, rgba(214, 175, 118, 0.18), transparent 20%);
 }
 
-.scene-marble .ritual-stage::after {
-  content: "";
-  position: absolute;
-  right: 9%;
-  bottom: 10%;
-  width: 240px;
-  height: 330px;
-  border-radius: 36px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(121, 121, 121, 0.18)),
-    rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-}
-
 .scene-bottle::after,
 .scene-glass::after {
   background:
     radial-gradient(circle at 72% 28%, rgba(255, 255, 255, 0.1), transparent 18%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 26%);
-}
-
-.scene-bottle .ritual-stage::after,
-.scene-glass .ritual-stage::after {
-  content: "";
-  position: absolute;
-  right: 10%;
-  bottom: 6%;
-  width: 210px;
-  height: 420px;
-  border-radius: 28px 28px 18px 18px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(183, 149, 99, 0.18)),
-    rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .scene-botanicals::after,
@@ -266,39 +209,10 @@ button {
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%);
 }
 
-.scene-botanicals .ritual-stage::after,
-.scene-petals .ritual-stage::after {
-  content: "";
-  position: absolute;
-  right: 6%;
-  bottom: 10%;
-  width: 320px;
-  height: 220px;
-  border-radius: 40px 120px 40px 120px;
-  background:
-    radial-gradient(circle at 18% 40%, rgba(109, 136, 92, 0.9), transparent 26%),
-    radial-gradient(circle at 62% 58%, rgba(210, 145, 92, 0.9), transparent 22%),
-    radial-gradient(circle at 82% 32%, rgba(199, 144, 149, 0.9), transparent 16%);
-}
-
 .scene-gilded::after {
   background:
     radial-gradient(circle at 70% 32%, rgba(215, 179, 122, 0.24), transparent 16%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%);
-}
-
-.scene-gilded .ritual-stage::after {
-  content: "";
-  position: absolute;
-  right: 10%;
-  bottom: 8%;
-  width: 260px;
-  height: 360px;
-  border-radius: 34px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(215, 179, 122, 0.22)),
-    rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(215, 179, 122, 0.26);
 }
 
 .scene-silk::after {
@@ -307,38 +221,11 @@ button {
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
 }
 
-.scene-silk .ritual-stage::after {
-  content: "";
-  position: absolute;
-  right: 4%;
-  bottom: 12%;
-  width: 400px;
-  height: 240px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02));
-  filter: blur(10px);
-}
-
 .scene-shelves::after,
 .scene-ribbon::after {
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent 24%),
     radial-gradient(circle at 75% 30%, rgba(255, 255, 255, 0.1), transparent 16%);
-}
-
-.scene-shelves .ritual-stage::after,
-.scene-ribbon .ritual-stage::after {
-  content: "";
-  position: absolute;
-  right: 8%;
-  bottom: 10%;
-  width: 340px;
-  height: 220px;
-  border-radius: 26px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04)),
-    rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .ritual-nav {
@@ -680,25 +567,6 @@ button {
 
   .ritual-scene::before {
     background: linear-gradient(180deg, rgba(6, 6, 6, 0.78) 0%, rgba(6, 6, 6, 0.5) 40%, rgba(6, 6, 6, 0.78) 100%);
-  }
-
-  .scene-silhouette .ritual-stage::after,
-  .scene-atelier .ritual-stage::after,
-  .scene-marble .ritual-stage::after,
-  .scene-bottle .ritual-stage::after,
-  .scene-glass .ritual-stage::after,
-  .scene-botanicals .ritual-stage::after,
-  .scene-petals .ritual-stage::after,
-  .scene-gilded .ritual-stage::after,
-  .scene-silk .ritual-stage::after,
-  .scene-shelves .ritual-stage::after,
-  .scene-ribbon .ritual-stage::after {
-    width: 150px;
-    height: 220px;
-    right: 4%;
-    bottom: auto;
-    top: 96px;
-    opacity: 0.42;
   }
 
   .ritual-links {
